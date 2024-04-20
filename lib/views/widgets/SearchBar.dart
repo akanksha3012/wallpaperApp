@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import "package:flutter/services.dart";
+import 'package:wallify/views/screens/search.dart';
 
-class SearchBar extends StatelessWidget {
-  const SearchBar({super.key});
+class searchBar extends StatelessWidget {
+  searchBar({super.key});
+  TextEditingController _searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +19,7 @@ class SearchBar extends StatelessWidget {
         children: [
           Expanded(
             child: TextField(
+              controller: _searchController,
               decoration: InputDecoration( 
                 hintText: "Search Wallpapers",
                errorBorder: InputBorder.none,
@@ -29,7 +33,9 @@ class SearchBar extends StatelessWidget {
           ),
           InkWell(
             onTap:(){
-              print("SEARCHING...");
+              Navigator.push(
+                context, MaterialPageRoute(builder: (context)=>
+                SearchScreen(query:_searchController.text)));
             },
             child:Icon(Icons.search)),
         ],

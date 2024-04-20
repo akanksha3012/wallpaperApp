@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class CustomAppBar extends StatelessWidget {
+class customAppBar extends StatelessWidget {
   String word1;
   String word2;
-  CustomAppBar({super.key,
+  customAppBar({super.key,
   required this.word1,
   required this.word2});
 
