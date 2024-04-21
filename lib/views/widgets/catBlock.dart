@@ -31,13 +31,13 @@ class catBlock extends StatelessWidget {
           Container(
             height: 50,
             width:100,
-            color: Colors.black26,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), 
+            color: Colors.black26),
           ),
           Positioned(
             left: 30,
             top: 15,
-            child: Text("Cars", style: TextStyle(color:Colors.white, fontWeight: FontWeight.w600)))
+            child: Text(categoryName, style: TextStyle(color:Colors.white, fontWeight: FontWeight.w600)))
         ],
       ),
     ),
