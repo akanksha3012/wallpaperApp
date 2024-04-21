@@ -37,7 +37,8 @@ class catBlock extends StatelessWidget {
           Positioned(
             left: 30,
             top: 15,
-            child: Text(categoryName, style: TextStyle(color:Colors.white, fontWeight: FontWeight.w600)))
+            child: Text(categoryName, 
+            style: TextStyle(color:Colors.white, fontWeight: FontWeight.w600)))
         ],
       ),
     ),
