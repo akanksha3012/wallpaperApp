@@ -3,6 +3,7 @@ import "package:flutter/services.dart";
 import "package:image_downloader/image_downloader.dart";
 import "package:get/get.dart";
 import "package:open_file/open_file.dart";
+import "package:wallify/views/screens/addQuote.dart";
 
 // var file = await DefaultCacheManager().getSingleFile(url);
 class FullScreen extends StatelessWidget {
@@ -44,11 +45,26 @@ class FullScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      floatingActionButton: ElevatedButton(
-          onPressed: () async {
-            await setWallpaperFromFile(imgUrl, context);
-          },
-          child: Text("Set Wallpaper")),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(
+              onPressed: () async {
+                await setWallpaperFromFile(imgUrl, context);
+              },
+              child: Text("Set Wallpaper")),
+              SizedBox(width: 20.0),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(context,
+                MaterialPageRoute(
+                  builder: (context) =>addQuote(
+                    imgUrl: imgUrl)));
+                print("Inspire Me pressed");
+              },
+              child: Text("Inspire Me")),
+        ],
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: Container(
         height: MediaQuery.of(context).size.height,

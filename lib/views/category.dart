@@ -63,7 +63,7 @@ bool isLoading  = true;
                   color: Colors.black38,
                 ),
                 Positioned(
-                  left: 120,
+                  left: 140,
                   top: 40,
                   child: Column(
                     children: [
